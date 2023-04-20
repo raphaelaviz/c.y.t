@@ -1,0 +1,28 @@
+.inventory {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: moccasin;
+  height: 80vh;
+  width: 80px;
+  border: 1px solid black;
+}
+
+.inventorySlot {
+  border: 1px solid black;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.itemSlot {
+  background-size: 70%;
+}
+
+  
