@@ -108,11 +108,19 @@ export const loadRoom = (roomID, setGridStyle, setDisplayMessage) => {
   };
 
 
-// The createClickableArea function helps me create large clickable areas without
-// the need of passing every single cell index. By passing the first 3 parameters, we draw the lines
-// of a square or rectangle and the function then "fills" the whole area, assigning every cell with the
-// respective action. The extraCells parameter accepts any number of extra cells that need to be assgined
-// according to the shape or size of the desired area.
+/* The createClickableArea function helps me create large clickable areas without
+ the need of passing every single cell index. By passing the first 3 parameters, we draw the lines
+ of a square or rectangle like this:
+ 
+  P1-----P3          P1 = firstRow
+  |      |           P2 = lastRow
+  |      |           P3 = rowWidth
+  P2-----P3
+
+
+ and the function then "fills" the whole area, assigning every cell within it with the
+ respective action. The extraCells parameter accepts any number of extra cells that need to be assgined
+ according to the shape or size of the desired area. */
 
  export const createClickableArea = (firstRow, lastRow, rowWidth, ...extraCells) => {
     const rowLength = 64;
