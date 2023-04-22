@@ -71,8 +71,8 @@ import triangle from './assets/images/items/triangle.png';
      index: createClickableArea(2763, 2891, 5),
      item: {
        image: box,
-       position: { top: '387px', left: '100px' },
-       inGameSize: { width: '43px', height: '36px' },
+       position: { top: '67%', left: '18%' },
+       inGameSize: { width: '6%', height: '6%' },
      },
      action: ({ setDisplayMessage, setInventoryItems }) => {
        setInventoryItems((prevItems) => [...prevItems, { image: box }]);
@@ -189,8 +189,8 @@ let isCurtainsOpen = false;
     index: createClickableArea(990,1182,4,927,928),
     item: {
       image: egg,
-      position: { top: '125px', left: '264px' },
-      inGameSize: { width: '55px', height: '55px' },
+      position: { top: '21.2%', left: '45.5%' },
+      inGameSize: { width: '9%', height: '9%' },
     },
     action: ({ setDisplayMessage, setInventoryItems }) => {
       setInventoryItems((prevItems) => [...prevItems, { image: egg }]);
@@ -252,8 +252,8 @@ let isCurtainsOpen = false;
     index: createClickableArea(3188, 3380, 3), //cylinder
     item: {
       image: cylinder,
-      position: { top: '437px', left: '460px' },
-      inGameSize: { width: '50px', height: '50px' },
+      position: { top: '76%', left: '79.5%' },
+      inGameSize: { width: '8%', height: '8%' },
     },
     action: ({ setDisplayMessage, setInventoryItems, displayQuestionScreen }) => {
       setInventoryItems((prevItems) => [...prevItems, { image: cylinder }]);
@@ -291,8 +291,8 @@ let isCurtainsOpen = false;
     index: createClickableArea(1310, 1502, 4),
     item: {
       image: ball,
-      position: { top: '174px', left: '268px' },
-      inGameSize: { width: '45px', height: '46px' },
+      position: { top: '30.5%', left: '46%' },
+      inGameSize: { width: '8%', height: '8%' },
     },
     action: ({ setDisplayMessage, setInventoryItems }) => {
       setInventoryItems((prevItems) => [...prevItems, { image: ball }]);
@@ -388,7 +388,7 @@ export const clickableCellsSix = [
     index: [1271,1335,1399],
     item: {
       image: key,
-      position: { top: '156px', left: '477px' },
+      position: { top: '26.5%' , left: '82.5%' },
     },
     action: ({ setInventoryItems }) => {
       setInventoryItems((prevItems) => [...prevItems, { image: key }]);
@@ -412,8 +412,8 @@ export const clickableCellsSix = [
   index: createClickableArea(3542, 3670, 3, 3479, 3669),
   item: {
     image: triangle,
-    position: { top: '484px', left: '189px' },
-    inGameSize: { width: '45px', height: '46px' },
+    position: { top: '84%', left: '32%' },
+    inGameSize: { width: '8%', height: '8%' },
   },
   action: ({ setDisplayMessage, setInventoryItems }) => {
     setInventoryItems((prevItems) => [...prevItems, { image: triangle }]);
@@ -430,8 +430,8 @@ export const clickableCellsSix = [
     index: createClickableArea(3224, 3416, 3),
     item: {
       image: candle,
-      position: { top: '450px', left: '212px' },
-      inGameSize: { width: '40px', height: '44px' },
+      position: { top: '77.5%', left: '36.5%' },
+      inGameSize: { width: '7%', height: '7.4%' },
     },
     action: ({ setDisplayMessage ,setInventoryItems }) => {
       setInventoryItems((prevItems) => [...prevItems, { image: candle }]);

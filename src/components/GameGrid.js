@@ -16,7 +16,7 @@ const GameGrid = ({ handleClick, activeCells }) => {
 
         // The line is for my own use so I can see which cells are clickable when defining the interactions.
 
-        // style={isActive ? { backgroundColor: 'white' } : {}}
+        //  style={isActive ? { backgroundColor: 'white' } : {}}
       />
     );
   });
