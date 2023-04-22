@@ -388,7 +388,7 @@ export const clickableCellsSix = [
     index: [1271,1335,1399],
     item: {
       image: key,
-      position: { top: '26.5%' , left: '82.5%' },
+      position: { top: '27%' , left: '82.5%' },
     },
     action: ({ setInventoryItems }) => {
       setInventoryItems((prevItems) => [...prevItems, { image: key }]);
