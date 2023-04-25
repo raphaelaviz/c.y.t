@@ -17,21 +17,21 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <script>
-      window.addEventListener('keydown', (event) => {
-        if (
-          (event.ctrlKey || event.metaKey) &&
-          (event.code === 'Minus' || event.code === 'Equal' || event.code === 'NumpadAdd' || event.code === 'NumpadSubtract')
-        ) {
-          event.preventDefault();
-        }
-      });
+    //   window.addEventListener('keydown', (event) => {
+    //     if (
+    //       (event.ctrlKey || event.metaKey) &&
+    //       (event.code === 'Minus' || event.code === 'Equal' || event.code === 'NumpadAdd' || event.code === 'NumpadSubtract')
+    //     ) {
+    //       event.preventDefault();
+    //     }
+    //   });
     
-      window.addEventListener('wheel', (event) => {
-        if (event.ctrlKey || event.metaKey) {
-          event.preventDefault();
-        }
-      }, { passive: false });
-    </script>
+    //   window.addEventListener('wheel', (event) => {
+    //     if (event.ctrlKey || event.metaKey) {
+    //       event.preventDefault();
+    //     }
+    //   }, { passive: false });
+    // </script>
     
   </body>
 </html>
