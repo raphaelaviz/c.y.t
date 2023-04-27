@@ -6,7 +6,7 @@ import room4 from './assets/images/rooms/room4.png';
 import room5 from './assets/images/rooms/room5.png';
 import room6 from './assets/images/rooms/room6.png';
 import journalScene from './assets/images/rooms/journalScene.png';
-import patternScene from './assets/images/rooms/patternScene.png.png';
+import patternScene from './assets/images/rooms/patternScene.png';
 import roomCyt from './assets/images/rooms/roomCyt.png';
 import roomCytV2 from './assets/images/rooms/roomCytV2.png';
 import roomCytV3 from './assets/images/rooms/roomCytV3.png';
