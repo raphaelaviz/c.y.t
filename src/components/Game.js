@@ -127,17 +127,17 @@ const startGame = () => {
     });
     setShowButton(false);
     setDisplayInventory(true);
-    // setTimeout(() => {
-    //   setDisplayMessage("Another day. Will this one take me closer or further from what I really want?"
-    //   )},1000)
+     setTimeout(() => {
+       setDisplayMessage("Another day. Will this one take me closer or further from what I really want?"
+       )},1000)
     
-    //  setTimeout(() => {
-    //    displayQuestionScreen(
-    //    'Closer',
-    //    'Ok, but...what do I really want?',
-    //    'Further',
-    //    'Let\'s face it, today is very likely to not be any different.');
-    //  }, 3000);
+      setTimeout(() => {
+        displayQuestionScreen(
+        'Closer',
+        'Ok, but...what do I really want?',
+        'Further',
+        'Let\'s face it, today is very likely to not be any different.');
+      }, 3000);
   };
 
 // Rendering section
