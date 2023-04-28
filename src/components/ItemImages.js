@@ -5,7 +5,7 @@ import React from 'react';
 // that haven't been collected yet within the game grid.
 
 
-const ItemImages = ({ currentCells }) => {
+const ItemImages = ({ currentCells, roomFade }) => {
   return (
     
     // Iterates through the currentCells array to render each item not assigned as "collected".

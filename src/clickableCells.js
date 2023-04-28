@@ -48,16 +48,20 @@ import triangle from './assets/images/items/triangle.png';
   {
     index: createClickableArea(2051, 2179, 2),
     isUnlocked: false,
-    action: function ({ setDisplayMessage, setGridStyle, inventoryItems, setInventoryItems }) {
+    action: function ({ setDisplayMessage, setGridStyle, inventoryItems, setInventoryItems, setRoomFade }) {
       if (this.isUnlocked) {
+        setRoomFade(1)
         setTimeout(() => {
-          loadRoom(2, setGridStyle, setDisplayMessage)}, 100)
+          loadRoom(2, setGridStyle, setDisplayMessage)
+          setRoomFade(0)}, 100)
       } else {
         const hasKey = inventoryItems.some(item => item.image === key);
         if (hasKey) {
           playSound(unlockingDoor);
+          setRoomFade(1)
           setTimeout(() => {
-            loadRoom(2, setGridStyle, setDisplayMessage)}, 100)
+            loadRoom(2, setGridStyle, setDisplayMessage)
+            setRoomFade(0)}, 100)
           setInventoryItems(inventoryItems.filter(item => item.image !== key));
           this.isUnlocked = true;
         } else {
@@ -82,17 +86,21 @@ import triangle from './assets/images/items/triangle.png';
   },
   {
     index: [3999,4000,4063,4064], //roomChange
-    action: ({ setGridStyle, setDisplayMessage }) => {
+    action: ({ setGridStyle, setDisplayMessage, setRoomFade }) => {
+      setRoomFade(1); 
       setTimeout(() => {
-        loadRoom(6, setGridStyle, setDisplayMessage)},100) 
+        loadRoom(6, setGridStyle, setDisplayMessage)
+        setRoomFade(0)},100)
   },
   },
   {
     index: [2937,2999,3000,3001,3002,3003,3004,3062,3063,3064,3065, 3066,3067,3128,3129,3130], //roomChange
-    action: ({ setGridStyle, setDisplayMessage }) => {
+    action: ({ setGridStyle, setDisplayMessage, setRoomFade }) => {
       playSound(journalGrab);
+      setRoomFade(1);
       setTimeout(() => {
-        loadRoom('journalScene', setGridStyle, setDisplayMessage)},100) 
+        loadRoom('journalScene', setGridStyle, setDisplayMessage)
+        setRoomFade(0)},100) 
   },
   },
   
@@ -113,24 +121,30 @@ let isCurtainsOpen = false;
     },
     {
       index: createClickableArea(920, 3288, 16), // roomChange
-      action: ({ setGridStyle, setDisplayMessage }) => {
+      action: ({ setGridStyle, setDisplayMessage, setRoomFade }) => {
+        setRoomFade(1);
         setTimeout(() => {
-          loadRoom(5, setGridStyle, setDisplayMessage)},100)
+          loadRoom(5, setGridStyle, setDisplayMessage)
+        setRoomFade(0)},100)
       },
     },
     {
       index: createClickableArea(1924, 2116, 2), //roomChange
-      action: ({ setGridStyle, setDisplayMessage }) => {
+      action: ({ setGridStyle, setDisplayMessage, setRoomFade }) => {
+        setRoomFade(1)
         setTimeout(() => {
-          loadRoom(isCurtainsOpen ? '3v2' : 3, setGridStyle, setDisplayMessage)},100)
+          loadRoom(isCurtainsOpen ? '3v2' : 3, setGridStyle, setDisplayMessage)
+          setRoomFade(0)},100)
         
       },
     },
     {
       index: [2108,2109,2172,2173], //roomChange
-      action: ({ setGridStyle, setDisplayMessage }) => {
+      action: ({ setGridStyle, setDisplayMessage, setRoomFade }) => {
+        setRoomFade(1)
         setTimeout(() => {
-          loadRoom(1, setGridStyle, setDisplayMessage)},100)
+          loadRoom(1, setGridStyle, setDisplayMessage)
+          setRoomFade(0)},100)
       },
     },
   ]
@@ -167,16 +181,20 @@ let isCurtainsOpen = false;
     },
     {
       index: [1984,1985,2048,2049],
-      action: ({ setGridStyle, setDisplayMessage }) => {
+      action: ({ setGridStyle, setDisplayMessage, setRoomFade }) => {
+        setRoomFade(1)
         setTimeout(() => {
-          loadRoom(4, setGridStyle, setDisplayMessage)},100)
+          loadRoom(4, setGridStyle, setDisplayMessage)
+          setRoomFade(0)},100)
       },
     },
     {
       index: [2046,2047,2110,2111],
-      action: ({ setGridStyle, setDisplayMessage }) => {
+      action: ({ setGridStyle, setDisplayMessage, setRoomFade }) => {
+        setRoomFade(1)
         setTimeout(() => {
-          loadRoom(2, setGridStyle, setDisplayMessage)},100)
+          loadRoom(2, setGridStyle, setDisplayMessage)
+          setRoomFade(0)},100)
       },
     },
   ]
@@ -215,20 +233,24 @@ let isCurtainsOpen = false;
     }
   },
 },
-  {
-    index: [1984,1985,2048,2049],
-    action: ({ setGridStyle, setDisplayMessage }) => {
-      setTimeout(() => {
-        loadRoom(4, setGridStyle, setDisplayMessage)},100)
-    },
+{
+  index: [1984,1985,2048,2049],
+  action: ({ setGridStyle, setDisplayMessage, setRoomFade }) => {
+    setRoomFade(1)
+    setTimeout(() => {
+      loadRoom(4, setGridStyle, setDisplayMessage)
+      setRoomFade(0)},100)
   },
-  {
-    index: [2046,2047,2110,2111],
-    action: ({ setGridStyle, setDisplayMessage }) => {
-      setTimeout(() => {
-        loadRoom(2, setGridStyle, setDisplayMessage)},100)
-    },
+},
+{
+  index: [2046,2047,2110,2111],
+  action: ({ setGridStyle, setDisplayMessage, setRoomFade }) => {
+    setRoomFade(1)
+    setTimeout(() => {
+      loadRoom(2, setGridStyle, setDisplayMessage)
+      setRoomFade(0)},100)
   },
+},
 ]
 /*******************************************************************************************************************************
  ****************                          ROOM 4
@@ -237,9 +259,11 @@ let isCurtainsOpen = false;
   
   {
     index: [2110,2111,2174,2175], //room change
-    action: ({ setGridStyle, setDisplayMessage }) => {
+    action: ({ setGridStyle, setDisplayMessage, setRoomFade }) => {
+      setRoomFade(1);
       setTimeout(() => {
-        loadRoom(isCurtainsOpen ? '3v2' : 3, setGridStyle, setDisplayMessage)},100)
+        loadRoom(isCurtainsOpen ? '3v2' : 3, setGridStyle, setDisplayMessage)
+        setRoomFade(0)},100)
     },
   },
   {
@@ -270,9 +294,11 @@ let isCurtainsOpen = false;
   },
   {
     index: createClickableArea(1257, 1705, 8), //room change
-    action: ({ setGridStyle, setDisplayMessage }) => {
+    action: ({ setGridStyle, setDisplayMessage, setRoomFade }) => {
+      setRoomFade(1)
       setTimeout(() => {
-        loadRoom('patternScene', setGridStyle, setDisplayMessage)},100)
+        loadRoom('patternScene', setGridStyle, setDisplayMessage)
+        setRoomFade(0)},100)
     },
   },
 ]
@@ -282,9 +308,11 @@ let isCurtainsOpen = false;
  export const clickableCellsFive = [
   {
     index: [3999,4000,4063,4064],
-    action: ({ setGridStyle, setDisplayMessage }) => {
+    action: ({ setGridStyle, setDisplayMessage, setRoomFade }) => {
+      setRoomFade(1);
       setTimeout(() => {
-        loadRoom(2, setGridStyle, setDisplayMessage)},100)
+        loadRoom(2, setGridStyle, setDisplayMessage)
+        setRoomFade(0)},100)
     },
   },
   {
@@ -350,7 +378,7 @@ export const clickableCellsSix = [
   {
     index: createClickableArea(1815, 2263, 1),
     action: ({ setDisplayMessage }) => {
-      setDisplayMessage('"Fifty Shades of Grrhm.." *cough cough*...');
+      setDisplayMessage('"Fifty Shad.." *cough cough*...');
     },
   },
   {
@@ -379,9 +407,11 @@ export const clickableCellsSix = [
   },
   {
     index: [3999,4000,4063,4064],
-    action: ({ setGridStyle, setDisplayMessage }) => {
+    action: ({ setGridStyle, setDisplayMessage, setRoomFade }) => {
+      setRoomFade(1)
       setTimeout(() => {
-        loadRoom(1, setGridStyle, setDisplayMessage)},100) 
+        loadRoom(1, setGridStyle, setDisplayMessage)
+        setRoomFade(0)},100) 
   },
   },
   {
@@ -402,10 +432,12 @@ export const clickableCellsSix = [
  *****************************************************************************************************************************/
  export const clickableCellsJournalScene = [
 {
-  index: [3999,4000,4063,4064],
-  action: ({ setGridStyle, setDisplayMessage }) => {
+  index: [3999,4000,4063,4064], //room change
+  action: ({ setGridStyle, setDisplayMessage, setRoomFade }) => {
+    setRoomFade(1)
     setTimeout(() => {
-      loadRoom(1, setGridStyle, setDisplayMessage)},100) 
+      loadRoom(1, setGridStyle, setDisplayMessage)
+      setRoomFade(0)},100) 
   },
 },
 {
@@ -440,10 +472,12 @@ export const clickableCellsSix = [
     },
   },   
 {
-  index: [3999,4000,4063,4064],
-  action: ({ setGridStyle, setDisplayMessage }) => {
+  index: [3999,4000,4063,4064], //room change
+  action: ({ setGridStyle, setDisplayMessage, setRoomFade }) => {
+    setRoomFade(1)
     setTimeout(() => {
-      loadRoom(4, setGridStyle, setDisplayMessage)},100)
+      loadRoom(4, setGridStyle, setDisplayMessage)
+      setRoomFade(0)},100)
   },
 },
 ]
@@ -454,9 +488,11 @@ export const clickableCellsSix = [
     
   {
     index: [3999,4000,4063,4064], //roomChange
-    action: ({ setGridStyle, setDisplayMessage }) => {
+    action: ({ setGridStyle, setDisplayMessage, setRoomFade }) => {
+      setRoomFade(1);
       setTimeout(() => {
-        loadRoom(6, setGridStyle, setDisplayMessage)},100)
+        loadRoom(6, setGridStyle, setDisplayMessage)
+        setRoomFade(0)},100)
     },
   },
   {

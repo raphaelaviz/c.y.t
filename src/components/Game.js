@@ -20,6 +20,7 @@ const Game = () => {
   const [displayMessage, setDisplayMessage] = useState(false);
   const [inventoryItems, setInventoryItems] = useState([]);
   const [displayInventory, setDisplayInventory] = useState(false);
+  const [roomFade, setRoomFade] = useState(0);
   const [finalFade, setFinalFade] = useState(0);
   const [showQuestionScreen, setShowQuestionScreen] = useState(false);
   const [questionScreenOptions, setQuestionScreenOptions] = useState([]);
@@ -99,6 +100,7 @@ const Game = () => {
         displayQuestionScreen,
         setInventoryItems,
         inventoryItems,
+        setRoomFade,
         setFinalFade,
         setDisplayInventory,
       });
@@ -125,17 +127,17 @@ const startGame = () => {
     });
     setShowButton(false);
     setDisplayInventory(true);
-    setTimeout(() => {
-      setDisplayMessage("Another day. Will this one take me closer or further from what I really want?"
-      )},1000)
+    // setTimeout(() => {
+    //   setDisplayMessage("Another day. Will this one take me closer or further from what I really want?"
+    //   )},1000)
     
-     setTimeout(() => {
-       displayQuestionScreen(
-       'Closer',
-       'Ok, but...what do I really want?',
-       'Further',
-       'Let\'s face it, today is very likely to not be any different.');
-     }, 3000);
+    //  setTimeout(() => {
+    //    displayQuestionScreen(
+    //    'Closer',
+    //    'Ok, but...what do I really want?',
+    //    'Further',
+    //    'Let\'s face it, today is very likely to not be any different.');
+    //  }, 3000);
   };
 
 // Rendering section
@@ -144,13 +146,14 @@ const startGame = () => {
     <div className="gameContainer">
       <div>
         <div style={gridStyle}>
+          <div className="roomFade" style={{ opacity: roomFade }}></div>
           <div className="finalFade" style={{ opacity: finalFade }}></div>
             <GameGrid
              handleClick={handleClick}
              currentCells={currentCells}
              activeCells={gridStyle.activeCells}
             />
-            <ItemImages currentCells={currentCells} />
+            <ItemImages currentCells={currentCells}/>
             <StartButton
              startGame={startGame}
              showButton={showButton}
