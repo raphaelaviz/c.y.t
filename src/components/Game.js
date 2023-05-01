@@ -8,47 +8,8 @@ import StartButton from './StartButton/StartButton';
 import MessageBalloon from './MessageBalloon/MessageBalloon';
 import ItemImages from './ItemImages';
 import './Game.css';
-
 import room1 from "../assets/images/rooms/room1.png";
-import room2 from "../assets/images/rooms/room2.png";
-import room3 from "../assets/images/rooms/room3.png";
-import room3v2 from "../assets/images/rooms/room3v2.png";
-import room4 from "../assets/images/rooms/room4.png";
-import room5 from "../assets/images/rooms/room5.png";
-import room6 from "../assets/images/rooms/room6.png";
-import roomCyt from "../assets/images/rooms/roomCyt.png";
-import journalScene from "../assets/images/rooms/journalScene.png";
-import patternScene from "../assets/images/rooms/patternScene.png";
-
-const room1Img = new Image();
-room1Img.src = room1;
-
-const room2Img = new Image();
-room2Img.src = room2;
-
-const room3Img = new Image();
-room3Img.src = room3;
-
-const room3v2Img = new Image();
-room3v2Img.src = room3v2;
-
-const room4Img = new Image();
-room4Img.src = room4;
-
-const room5Img = new Image();
-room5Img.src = room5;
-
-const room6Img = new Image();
-room6Img.src = room6;
-
-const roomCytImg = new Image();
-roomCytImg.src = roomCyt;
-
-const journalSceneImg = new Image();
-journalSceneImg.src = journalScene;
-
-const patternSceneImg = new Image();
-patternSceneImg.src = patternScene;
+import { preloadImages, preloadSoundFiles } from '../preloadAssets';
 
 
 // This components acts as the main container for the game.
@@ -159,40 +120,32 @@ const closeMessage = () => {
 // shows the introductory messages.
 
 const startGame = () => {
-  Promise.all([
-    room1Img,
-    room2Img,
-    room3Img,
-    room3v2Img,
-    room4Img,
-    room5Img,
-    room6Img,
-    roomCytImg,
-    journalSceneImg,
-    patternSceneImg,
-  ]).then(() => {
-    setCurrentCells(clickableCellsOne);
-    setGridStyle({
-      ...gridStyle,
-      backgroundImage: `url(${room1})`,
-      activeCells: clickableCellsOne,
-    });
-    setShowButton(false);
-    setDisplayInventory(true);
-    setTimeout(() => {
-      setDisplayMessage(
-        "Another day. Will this one take me closer or further from what I really want?"
-      );
-    }, 1000);
-    setTimeout(() => {
-      displayQuestionScreen(
-        "Closer",
-        "Ok, but...what do I really want?",
-        "Further",
-        "Let's face it, today is very likely to not be any different."
-      );
-    }, 3000);
+  
+  preloadImages();
+  preloadSoundFiles();
+
+  setCurrentCells(clickableCellsOne);
+  setGridStyle({
+    ...gridStyle,
+    backgroundImage: `url(${room1})`,
+    activeCells: clickableCellsOne,
   });
+  setShowButton(false);
+  setDisplayInventory(true);
+  setTimeout(() => {
+    setDisplayMessage(
+      "Another day. Will this one take me closer or further from what I really want?"
+    );
+  }, 1000);
+
+  setTimeout(() => {
+    displayQuestionScreen(
+      "Closer",
+      "Ok, but...what do I really want?",
+      "Further",
+      "Let's face it, today is very likely to not be any different."
+    );
+  }, 3000);
 };
 
 
