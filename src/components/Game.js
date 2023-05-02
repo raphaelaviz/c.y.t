@@ -22,9 +22,12 @@ const Game = () => {
   const [inventoryItems, setInventoryItems] = useState([]);
   const [displayInventory, setDisplayInventory] = useState(false);
   const [roomFade, setRoomFade] = useState(0);
-  const [finalFade, setFinalFade] = useState(0);
+  const [longFade, setLongFade] = useState(0);
   const [showQuestionScreen, setShowQuestionScreen] = useState(false);
   const [questionScreenOptions, setQuestionScreenOptions] = useState([]);
+
+  preloadImages();
+  preloadSoundFiles();
 
   // Initial state for the grid. The last two properties are affected by changing rooms in the game.
 
@@ -102,7 +105,7 @@ const Game = () => {
         setInventoryItems,
         inventoryItems,
         setRoomFade,
-        setFinalFade,
+        setLongFade,
         setDisplayInventory,
       });
     }
@@ -121,9 +124,6 @@ const closeMessage = () => {
 
 const startGame = () => {
   
-  preloadImages();
-  preloadSoundFiles();
-
   setCurrentCells(clickableCellsOne);
   setGridStyle({
     ...gridStyle,
@@ -156,7 +156,7 @@ const startGame = () => {
       <div>
         <div style={gridStyle}>
           <div className="roomFade" style={{ opacity: roomFade }}></div>
-          <div className="finalFade" style={{ opacity: finalFade }}></div>
+          <div className="longFade" style={{ opacity: longFade }}></div>
             <GameGrid
              handleClick={handleClick}
              currentCells={currentCells}

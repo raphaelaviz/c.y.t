@@ -5,9 +5,15 @@ import room3v2 from "./assets/images/rooms/room3v2.png";
 import room4 from "./assets/images/rooms/room4.png";
 import room5 from "./assets/images/rooms/room5.png";
 import room6 from "./assets/images/rooms/room6.png";
-import roomCyt from "./assets/images/rooms/roomCyt.png";
-import journalScene from "./assets/images/rooms/journalScene.png";
+import journalScene from "./assets/images/rooms/roomCyt.png";
 import patternScene from "./assets/images/rooms/patternScene.png";
+import roomCyt from "./assets/images/rooms/roomCyt.png";
+import roomCytV2 from './assets/images/rooms/roomCytV2.png';
+import roomCytV3 from './assets/images/rooms/roomCytV3.png';
+import roomCytV4 from './assets/images/rooms/roomCytV4.png';
+import roomCytV5 from './assets/images/rooms/roomCytV5.png';
+import roomCytV6 from './assets/images/rooms/roomCytV6.png';
+import roomCytV7 from './assets/images/rooms/roomCytV7.png';
 import ball from "./assets/images/items/ball.png";
 import box from "./assets/images/items/box.png";
 import triangle from "./assets/images/items/triangle.png";
@@ -39,6 +45,12 @@ const roomImages = [
     room5,
     room6,
     roomCyt,
+    roomCytV2,
+    roomCytV3,
+    roomCytV4,
+    roomCytV5,
+    roomCytV6,
+    roomCytV7,
     journalScene,
     patternScene,
     ball,
