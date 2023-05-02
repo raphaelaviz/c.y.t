@@ -564,7 +564,7 @@ export const clickableCellsSix = [
       gridStyle,
       setDisplayMessage,
       setDisplayInventory,
-      setFinalFade,
+      setLongFade,
     }) => {
       const hasTriangle = inventoryItems.some(item => item.image === triangle);
       if (hasTriangle && gridStyle.backgroundImage === `url(${roomCytV6})`) {
@@ -573,13 +573,13 @@ export const clickableCellsSix = [
         deliveredItems.push(triangle);
         loadRoom("cytV7", setGridStyle, setDisplayMessage);
         setDisplayInventory(false);
-        setFinalFade(1);
+        setLongFade(1);
         setTimeout(() => {
           setGridStyle({
             ...gridStyle,
             backgroundImage: `url(${endScreen})`,
           });
-          setFinalFade(0);
+          setLongFade(0);
         }, 4000);
       }
     },
